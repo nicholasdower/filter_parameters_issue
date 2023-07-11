@@ -6,6 +6,8 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+ActiveRecord::Base if ENV['REQUIRE_ACTIVE_RECORD'] == '1'
+
 module Blog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
